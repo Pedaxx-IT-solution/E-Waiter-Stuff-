@@ -1,0 +1,34 @@
+package com.example.demo;
+
+import org.springframework.stereotype.Component;
+
+//@Component
+public class User {
+
+	private int userId;
+	private String userPass;
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getUserPass() {
+		return userPass;
+	}
+
+	public void setUserPass(String userPass) {
+		this.userPass = userPass;
+	}
+
+	
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userPass=" + userPass + "]";
+	}
+
+}

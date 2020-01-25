@@ -1,0 +1,47 @@
+package com.employee.controller;
+
+import java.awt.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.employee.dao.EmployeeDao;
+import com.employee.dto.User;
+import com.employee.dto.employee;
+
+@RestController
+@RequestMapping("/employee")
+public class EmployeeController {
+	@Autowired
+	private EmployeeDao empdao;
+	
+	
+	@PostMapping("/insert")
+	public void insert( employee emp) {
+
+	  this.empdao.insert();
+	}
+
+	@PutMapping("/update")
+	public void update() {
+
+		return "";
+	}
+
+	@GetMapping("/display")
+	public String display() {
+
+		return "";
+	}
+
+	@PostMapping("/list")
+	public  String list() {
+
+		return "";
+	}
+
+}

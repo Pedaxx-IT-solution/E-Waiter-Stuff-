@@ -1,0 +1,23 @@
+package com.india;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class FirstWebService {
+	
+	@RequestMapping("/")
+	public String helloWorld() {
+		
+		
+		return "HELLO WORLD";
+	}
+
+	
+	@RequestMapping("/universe")
+	public String helloUniverse() {
+		
+		
+		return "HELLO UNIVERSE";
+	}
+}

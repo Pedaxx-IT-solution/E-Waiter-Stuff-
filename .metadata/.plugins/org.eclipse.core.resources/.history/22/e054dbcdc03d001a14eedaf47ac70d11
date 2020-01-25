@@ -1,0 +1,39 @@
+package com.customer;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+
+public class CustomerController {
+
+	@Autowired
+	private CustomerDao customerdao;
+
+	@GetMapping("/signup")
+	public ModelAndView signup() {
+
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("signup");
+
+		return mv;
+	}
+
+	@PostMapping("/signup")
+	public ModelAndView registerDB(Customer cust) {
+
+		ModelAndView mv = new ModelAndView();
+
+		this.customerdao.insert(cust);
+
+		mv.setViewName("Home");
+
+		return mv;
+	}
+
+}

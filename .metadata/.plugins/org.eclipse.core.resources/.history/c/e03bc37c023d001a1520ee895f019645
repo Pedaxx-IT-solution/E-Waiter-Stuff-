@@ -1,0 +1,53 @@
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+@SpringBootApplication
+public class HelloSpringApplication implements CommandLineRunner{
+	
+	@Autowired
+	private  User  user;
+	
+	
+	@Autowired
+	private JdbcTemplate jdbctemplate;
+	
+
+	public static void main(String[] args) {
+		SpringApplication.run(HelloSpringApplication.class, args);
+		
+		
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		System.out.println("hello world");
+		this.CreateUser();
+		//this.UpdateUser();
+	}
+	
+	public void CreateUser() {
+		
+		String sql = " insert into user values (?,?)";
+		jdbctemplate.update(sql, 2,"bombay");
+		System.out.println("insert succesfully");
+	}
+	
+	
+public void UpdateUser() {
+		
+		String sql = " update user set password=?  where id = ?";
+		jdbctemplate.update(sql, "mumbai123", 1);
+		System.out.println("updated succesfully");
+	}
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,39 @@
+package com.employee.controller;
+
+import java.awt.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/Employee")
+public class EmployeeController {
+
+	@PostMapping("/insert")
+	public String insert() {
+
+		return "";
+	}
+
+	@PutMapping("/update")
+	public String update() {
+
+		return "";
+	}
+
+	@GetMapping("/display")
+	public String display() {
+
+		return "";
+	}
+
+	@PostMapping("/list")
+	public  String list() {
+
+		return "";
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.india;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/input")
+public class ReadingController {
+	
+	
+	@RequestMapping("/")
+	public String readversion1() {
+		
+		
+		return "xyz";
+		
+	}
+	
+	
+	
+
+}
