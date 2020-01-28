@@ -1,0 +1,9 @@
+package com.ewaiter.repository;
+
+import com.ewaiter.dto.Menu;
+
+public interface MenuRepository {
+
+	void addMenuRepo(Menu menu);
+
+}

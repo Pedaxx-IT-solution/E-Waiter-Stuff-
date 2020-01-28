@@ -1,0 +1,31 @@
+package com.ewaiter.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Customer {
+	@Id
+	@GeneratedValue
+	@Column(name="customer_id")
+	private int customerId;
+	@Column(name="name")
+	private String Name;
+	@Column(name="table_id")
+	private int tableId;
+	@Column(name="mobile_no")
+	private String mobileNo;
+	
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+	
+	
+
+}

@@ -1,0 +1,14 @@
+package com.ewaiter.service;
+
+
+import org.springframework.stereotype.Service;
+
+import com.ewaiter.dto.Menu;
+
+@Service
+public interface MenuService {
+
+	public boolean addMenuService(Menu menu);
+	
+	
+}

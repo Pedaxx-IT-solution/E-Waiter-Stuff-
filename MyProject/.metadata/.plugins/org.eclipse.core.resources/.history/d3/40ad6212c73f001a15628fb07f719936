@@ -1,0 +1,14 @@
+package com.ewaiter.service;
+
+import com.ewaiter.controller.List;
+import com.ewaiter.controller.User;
+import com.ewaiter.dto.Menu;
+
+public interface MenuService {
+
+	public boolean addMenuService(Menu menu);
+
+	public List<Menu> findAll();
+	
+	
+}

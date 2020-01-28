@@ -1,0 +1,7 @@
+package com.ewaiter.dao;
+
+import org.springframework.jdbc.core.RowMapper;
+
+public class MenuRowMapper implements RowMapper<T> {
+
+}

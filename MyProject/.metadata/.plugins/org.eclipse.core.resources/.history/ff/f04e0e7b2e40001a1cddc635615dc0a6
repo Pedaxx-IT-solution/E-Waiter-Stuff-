@@ -1,0 +1,48 @@
+package com.ewaiter.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ewaiter.dto.Menu;
+import com.ewaiter.dao.MenuRepository;
+
+
+
+@Service
+public class MenuServiceImple implements MenuService {
+
+	@Autowired
+	MenuRepository mrepo;
+	
+	public boolean addMenuService(Menu menu) {
+		boolean flag = false;
+		flag = mrepo.addMenuRepo(menu);
+		return flag;
+	}
+
+	@Override
+	public List<Menu> findAll() {
+		List<Menu> li = new ArrayList<Menu>();
+		li = mrepo.findAll();
+		return li;
+	}
+
+	@Override
+	public void removeMenu(int id) {
+		mrepo.removeMenu(id);
+	}
+
+	@Override
+	public Menu getMenu(int id) {
+		Menu menu = mrepo.getMenu(id);
+		return menu;
+	}
+
+	@Override
+	public void editMenu(Menu menu) {
+		
+	}
+}

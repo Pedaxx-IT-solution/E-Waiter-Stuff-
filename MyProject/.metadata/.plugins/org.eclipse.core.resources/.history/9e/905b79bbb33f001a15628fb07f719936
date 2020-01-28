@@ -1,0 +1,12 @@
+package com.ewaiter.service;
+
+
+import com.ewaiter.dto.Menu;
+
+
+public interface MenuService {
+
+	public boolean addMenuService(Menu menu);
+	
+	
+}

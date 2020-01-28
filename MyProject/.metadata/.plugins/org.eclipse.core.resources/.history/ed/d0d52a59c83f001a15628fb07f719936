@@ -1,0 +1,19 @@
+package com.ewaiter.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import com.ewaiter.dto.Menu;
+
+public class MenuRowMapper implements RowMapper<Menu> 
+{
+
+	@Override
+	public Menu mapRow(ResultSet rs, int rowNum) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

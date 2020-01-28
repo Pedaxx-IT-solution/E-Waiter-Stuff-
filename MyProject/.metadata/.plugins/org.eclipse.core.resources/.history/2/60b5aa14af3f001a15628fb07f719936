@@ -1,0 +1,22 @@
+package com.ewaiter.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ewaiter.dto.Menu;
+import com.ewaiter.dao.MenuRepository;
+
+
+
+@Service
+public class MenuServiceImple {
+
+	@Autowired
+	MenuRepository mrepo;
+	
+	public boolean addMenuService(Menu menu) {
+		boolean flag = false;
+		mrepo.addMenuRepo(menu);
+		return flag;
+	}
+}

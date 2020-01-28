@@ -1,0 +1,37 @@
+package com.ewaiter.dao;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.ewaiter.dto.Customer;
+
+@Repository
+public class CustomerRepositoryImple implements CustomerRepository {
+
+	@Autowired
+	JdbcTemplate jdbctemp;
+	
+	@Override
+	@Transactional
+	public boolean custLoginRepo(Customer customer) {
+		
+		if(customer.getName().equals("")||(customer.getTable_id()==0)||customer.getMobile_no().equals(""))
+			return false;
+		
+		//String sqlGetId = "select customer_id from customer where "
+		
+		
+		String sql = "insert into customer (name,table_id,mobile_no) values(?,?,?)";
+		int records = jdbctemp.update(sql,new Object[] {customer.getName(),customer.getTable_id(),customer.getMobile_no()});
+		String sqlIdOfCUst = "SELECT LAST_INSERT_ID()";
+		int idOfCust = jdbctemp.queryForInt( "select last_insert_id()" );
+		if(records!=0)
+			return true;
+		else
+			return false;
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.ewaiter.service;
+
+import org.springframework.stereotype.Service;
+
+import com.ewaiter.dto.Menu;
+
+@Service
+public class AddMenuServiceImple {
+
+	public boolean addMenuService(Menu menu) {
+		boolean flag = false;
+		addMenuRepo(menu);
+		return flag;
+	}
+}
